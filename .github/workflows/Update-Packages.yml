@@ -58,13 +58,6 @@ jobs:
         df -hT
         echo "======================="
         du -h --max-depth=1 ${{matrix.target}}/
-    
-    - name: Diy files
-      run: | 
-        cd ${{matrix.target}}
-        rm -f luci-theme-edge/htdocs/luci-static/edge/logo.png
-        cp logos/milogo.png luci-theme-edge/htdocs/luci-static/edge/logo.png
-        rm logos -r
         
     - name: Upload
       env: 
