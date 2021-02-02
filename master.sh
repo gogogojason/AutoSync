@@ -12,7 +12,7 @@ wget -P ./devices/common/files/etc/config https://raw.githubusercontent.com/gogo
 rm -f ./devices/common/files/etc/config/mwan3
 wget -P ./devices/common/files/etc/config https://raw.githubusercontent.com/gogogojason/files/master/common/files/etc/config/mwan3
 sed -i '/bypass/d' ./devices/common/.config
-sed -i '/GaryPang/d' ./devices/common/.config
+sed -i '/GaryPang/d' ./devices/common/diy.sh
 sed -i "18a\CONFIG_PACKAGE_luci-app-poweroff=y" ./devices/common/.config
 sed -i "80a\chmod 755 /sbin/reboot" ./devices/common/default-settings
 sed -i "80a\chmod 755 /sbin/ethinfo" ./devices/common/default-settings
