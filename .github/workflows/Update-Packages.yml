@@ -1,4 +1,4 @@
-name: 更新插件
+name: 更新编译文件
 
 on:
   repository_dispatch:
@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [packages]
+        target: [master]
         
     steps:
     - name: Checkout
@@ -44,7 +44,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         chmod +x ${{matrix.target}}.sh
-        git clone -b ${{matrix.target}} https://github.com/gogogojason/OpenWrt-Packages.git ${{matrix.target}}
+        git clone -b ${{matrix.target}} https://github.com/gogogojason/OpenWrt.git ${{matrix.target}}
         cd ${{matrix.target}}
         rm -Rf *
         git rm --cache *
@@ -58,10 +58,8 @@ jobs:
         df -hT
         echo "======================="
         du -h --max-depth=1 ${{matrix.target}}/
-        du -h --max-depth=1 ${{matrix.target}}/luci-theme-edge/
-        du -h --max-depth=1 ${{matrix.target}}/logos/
     
-    - name: file cover
+    - name: Diy files
       run: | 
         cd ${{matrix.target}}
         rm -f luci-theme-edge/htdocs/luci-static/edge/logo.png
@@ -77,4 +75,4 @@ jobs:
         cd $GITHUB_WORKSPACE/${{matrix.target}}
         git add .
         git commit -m "$(TZ='Asia/Shanghai' date +%Y年%m月%d日)更新"
-        git push --quiet "https://${{ secrets.TOKEN }}@github.com/gogogojason/OpenWrt-Packages.git" HEAD:${{matrix.target}}
+        git push --quiet "https://${{ secrets.TOKEN }}@github.com/gogogojason/OpenWrt.git" HEAD:${{matrix.target}}
