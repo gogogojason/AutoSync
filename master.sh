@@ -1,35 +1,16 @@
 #!/bin/bash
-mkdir vssr
-svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-advancedsetting
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos
-svn co https://github.com/jerrykuku/luci-app-jd-dailybonus/trunk ./luci-app-jd-dailybonus
-git clone https://github.com/jerrykuku/luci-app-vssr.git
-svn co https://github.com/jerrykuku/lua-maxminddb/trunk ./lua-maxminddb
-git clone https://github.com/tty228/luci-app-serverchan.git
-svn co https://github.com/Lienol/openwrt/trunk/package/lean/luci-app-autoreboot
-git clone https://github.com/Lienol/openwrt-package && mv -n openwrt-package/* ./ ; rm -Rf openwrt-package
-git clone https://github.com/xiaorouji/openwrt-passwall && mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
-svn co https://github.com/garypang13/luci-theme-edge/branches/18.06 ./luci-theme-edge
-svn co https://github.com/coolsnowwolf/packages/trunk/net/miniupnpd
-svn co https://github.com/coolsnowwolf/packages/trunk/net/mwan3
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean ./
-svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman
-git clone https://github.com/brvphoenix/luci-app-wrtbwmon
-svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon
-svn co https://github.com/pexcn/openwrt-chinadns-ng/branches/luci ./luci-app-chinadns-ng
-git clone https://github.com/esirplayground/luci-app-poweroff
-git clone https://github.com/gogogojason/logos.git
-svn co https://github.com/siropboy/sirpdboy-package/trunk/luci-app-netdata
-svn co https://github.com/siropboy/sirpdboy-package/trunk/netdata
-git clone https://github.com/garypang13/luci-app-dnsfilter.git
-git clone https://github.com/pymumu/openwrt-smartdns.git
-git clone https://github.com/pymumu/luci-app-smartdns.git
-svn co https://github.com/garypang13/openwrt-packages/trunk/luci-app-bypass
-svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns
-svn co https://github.com/garypang13/openwrt-packages/trunk/tcping
+mkdir devices
+svn co https://github.com/gogogojason/files/trunk/All_RM2100 devices/
+svn co https://github.com/gogogojason/files/trunk/Ap_RM2100 devices/
+svn co https://github.com/gogogojason/files/trunk/Mi2100 devices/
+svn co https://github.com/gogogojason/files/trunk/Sim_RM2100 devices/
+svn co https://github.com/gogogojason/files/trunk/x86_64 devices/
+svn co https://github.com/garypang13/OpenWrt/trunk/devices/common devices/
+
+svn co https://github.com/garypang13/OpenWrt/trunk/devices
+svn co https://github.com/gogogojason/New-Openwrt-AutoBuild/trunk/.github/workflows
+git clone https://github.com/gogogojason/files.git devices/
+
 svn co https://github.com/garypang13/openwrt-packages/trunk/luci-app-gpsysupgrade
 sed -i 's/https:\/\/op.supes.top/http:\/\/openwrt.ink:8666/g' ./luci-app-gpsysupgrade/root/usr/bin/upgrade.lua
 sed -i 's/https:\/\/op.supes.top/http:\/\/openwrt.ink:8666/g' ./luci-app-gpsysupgrade/luasrc/model/cbi/gpsysupgrade/sysupgrade.lua
