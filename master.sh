@@ -20,5 +20,11 @@ sed -i "s/$1$tTPCBw1t$ldzfp37h5lSpO9VXk4uUE\/:18336/$1$V4UetPzk$CYXluq4wUazHjmCD
 wget -P ./devices/common https://raw.githubusercontent.com/gogogojason/files/master/diy2.sh
 rm -f ./devices/common/settings.ini
 wget -P ./devices/common https://github.com/gogogojason/files/blob/master/settings.ini
+rm -f ./devices/common/files/etc/AdGuardHome.yaml
+
+rm -rf .svn
+rm -rf ./*/.svn
+rm -rf ./*/*/.svn
+rm -rf ./*/*/*/.svn
 
 exit 0
