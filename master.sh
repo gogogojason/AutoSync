@@ -6,6 +6,12 @@ svn co https://github.com/gogogojason/files/trunk/Mi2100 devices/
 svn co https://github.com/gogogojason/files/trunk/Sim_RM2100 devices/
 svn co https://github.com/gogogojason/files/trunk/x86_64 devices/
 svn co https://github.com/garypang13/OpenWrt/trunk/devices/common devices/
+sed -i 's/GaryPang/hfy166/g' devices/common/diy/package/base-files/files/etc/banner
+wget https://raw.githubusercontent.com/gogogojason/files/master/common/files/etc/config/AdGuardHome.yaml devices/common/files/etc/config/
+rm -f devices/common/files/etc/config/mwan3
+wget https://raw.githubusercontent.com/gogogojason/files/master/common/files/etc/config/mwan3 devices/common/files/etc/config/
+find devices/common/.config -name "*bypass*" | xargs -i sed -i "s/bypass//g" {}
+
 
 svn co https://github.com/garypang13/OpenWrt/trunk/devices
 svn co https://github.com/gogogojason/New-Openwrt-AutoBuild/trunk/.github/workflows
