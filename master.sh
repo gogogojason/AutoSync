@@ -20,7 +20,9 @@ sed -i "80a\chmod 755 /sbin/reboot" ./devices/common/default-settings
 sed -i "80a\chmod 755 /sbin/ethinfo" ./devices/common/default-settings
 sed -i 's/10.0.0.1/192.168.2.1/g' ./devices/common/default-settings
 sed -i 's/tTPCBw1t/V4UetPzk/g' ./devices/common/default-settings
-sed -i 's/ldzfp37h5lSpO9VXk4uUE\\/:18336/CYXluq4wUazHjmCDBCqXF.:0/g' ./devices/common/default-settings
+pw1=`ldzfp37h5lSpO9VXk4uUE\/:18336`
+pw2=`CYXluq4wUazHjmCDBCqXF.:0`
+sed -i 's/$pw1/$pw2/g' ./devices/common/default-settings
 wget -P ./devices/common https://raw.githubusercontent.com/gogogojason/files/master/diy2.sh
 
 echo "">./devices/common/settings.ini
