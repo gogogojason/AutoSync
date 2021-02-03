@@ -66,6 +66,7 @@ jobs:
         [ -e $GITHUB_WORKSPACE/LICENSE ] && cp $GITHUB_WORKSPACE/LICENSE $GITHUB_WORKSPACE/${{matrix.target}}
         [ -e $GITHUB_WORKSPACE/README.md ] && cp $GITHUB_WORKSPACE/README.md $GITHUB_WORKSPACE/${{matrix.target}}
         cd $GITHUB_WORKSPACE/${{matrix.target}}
+        git config core.ignorecase false
         git add .
         git commit -m "$(TZ='Asia/Shanghai' date +%Y年%m月%d日)更新"
         git push --quiet "https://${{ secrets.TOKEN }}@github.com/gogogojason/OpenWrt.git" HEAD:${{matrix.target}}
