@@ -21,7 +21,24 @@ sed -i "80a\chmod 755 /sbin/ethinfo" ./devices/common/default-settings
 sed -i 's/10.0.0.1/192.168.2.1/g' ./devices/common/default-settings
 sed -i 's/tTPCBw1t\$ldzfp37h5lSpO9VXk4uUE\/:18336/V4UetPzk\$CYXluq4wUazHjmCDBCqXF.:0/g' ./devices/common/default-settings
 wget -P ./devices/common https://raw.githubusercontent.com/gogogojason/files/master/diy2.sh
+
 echo "">./devices/common/settings.ini
+echo "REPO_URL="https://github.com/openwrt/openwrt"">./devices/common/settings.ini
+echo "REPO_BRANCH="master"">./devices/common/settings.ini
+echo "CONFIG_FILE=".config"">./devices/common/settings.ini
+echo "SSH_ACTIONS="false"">./devices/common/settings.ini
+echo "DIY_SH="diy.sh"">./devices/common/settings.ini
+echo "DIY_SH2="diy2.sh"">./devices/common/settings.ini
+echo "FREE_UP_DISK="true"">./devices/common/settings.ini
+echo "UPLOAD_BIN_DIR_FOR_ARTIFACT="true"">./devices/common/settings.ini
+echo "UPLOAD_FIRMWARE="true"">./devices/common/settings.ini
+echo "UPLOAD_IPK="true"">./devices/common/settings.ini
+echo "UPLOAD_MYPAN="false"">./devices/common/settings.ini
+echo "UPLOAD_COWTRANSFER="true"">./devices/common/settings.ini
+echo "UPLOAD_WETRANSFER="true"">./devices/common/settings.ini
+echo "UPLOAD_RELEASE="false"">./devices/common/settings.ini
+echo "SERVERCHAN_SCKEY="true"">./devices/common/settings.ini
+
 wget -P ./devices/common https://github.com/gogogojason/files/blob/master/settings.ini
 rm -f ./devices/common/files/etc/AdGuardHome.yaml
 
