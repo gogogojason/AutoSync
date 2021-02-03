@@ -23,21 +23,39 @@ sed -i 's/tTPCBw1t\$ldzfp37h5lSpO9VXk4uUE\/:18336/V4UetPzk\$CYXluq4wUazHjmCDBCqX
 wget -P ./devices/common https://raw.githubusercontent.com/gogogojason/files/master/diy2.sh
 
 echo "">./devices/common/settings.ini
-echo "REPO_URL="https://github.com/openwrt/openwrt"">./devices/common/settings.ini
-echo "REPO_BRANCH="master"">./devices/common/settings.ini
-echo "CONFIG_FILE=".config"">./devices/common/settings.ini
-echo "SSH_ACTIONS="false"">./devices/common/settings.ini
-echo "DIY_SH="diy.sh"">./devices/common/settings.ini
-echo "DIY_SH2="diy2.sh"">./devices/common/settings.ini
-echo "FREE_UP_DISK="true"">./devices/common/settings.ini
-echo "UPLOAD_BIN_DIR_FOR_ARTIFACT="true"">./devices/common/settings.ini
-echo "UPLOAD_FIRMWARE="true"">./devices/common/settings.ini
-echo "UPLOAD_IPK="true"">./devices/common/settings.ini
-echo "UPLOAD_MYPAN="false"">./devices/common/settings.ini
-echo "UPLOAD_COWTRANSFER="true"">./devices/common/settings.ini
-echo "UPLOAD_WETRANSFER="true"">./devices/common/settings.ini
-echo "UPLOAD_RELEASE="false"">./devices/common/settings.ini
-echo "SERVERCHAN_SCKEY="true"">./devices/common/settings.ini
+cat >> ./devices/common/settings.ini <<EOF
+REPO_URL="https://github.com/openwrt/openwrt"
+REPO_BRANCH="master"
+CONFIG_FILE=".config"
+SSH_ACTIONS="false"
+DIY_SH="diy.sh"
+DIY_SH2="diy2.sh"
+FREE_UP_DISK="true"
+UPLOAD_BIN_DIR_FOR_ARTIFACT="true"
+UPLOAD_FIRMWARE="true"                
+UPLOAD_IPK="true"                              
+UPLOAD_MYPAN="false"
+UPLOAD_COWTRANSFER="true"        
+UPLOAD_WETRANSFER="true"         
+UPLOAD_RELEASE="false"                
+SERVERCHAN_SCKEY="true"   
+EOF
+
+#echo "REPO_URL="https://github.com/openwrt/openwrt"">./devices/common/settings.ini
+#echo "REPO_BRANCH="master"">./devices/common/settings.ini
+#echo "CONFIG_FILE=".config"">./devices/common/settings.ini
+#echo "SSH_ACTIONS="false"">./devices/common/settings.ini
+#echo "DIY_SH="diy.sh"">./devices/common/settings.ini
+#echo "DIY_SH2="diy2.sh"">./devices/common/settings.ini
+#echo "FREE_UP_DISK="true"">./devices/common/settings.ini
+#echo "UPLOAD_BIN_DIR_FOR_ARTIFACT="true"">./devices/common/settings.ini
+#echo "UPLOAD_FIRMWARE="true"">./devices/common/settings.ini
+#echo "UPLOAD_IPK="true"">./devices/common/settings.ini
+#echo "UPLOAD_MYPAN="false"">./devices/common/settings.ini
+#echo "UPLOAD_COWTRANSFER="true"">./devices/common/settings.ini
+#echo "UPLOAD_WETRANSFER="true"">./devices/common/settings.ini
+#echo "UPLOAD_RELEASE="false"">./devices/common/settings.ini
+#echo "SERVERCHAN_SCKEY="true"">./devices/common/settings.ini
 
 wget -P ./devices/common https://github.com/gogogojason/files/blob/master/settings.ini
 rm -f ./devices/common/files/etc/AdGuardHome.yaml
