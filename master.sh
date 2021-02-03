@@ -28,7 +28,7 @@ sed -i "3a\rm -Rf feeds/custom/luci-app-adguardhome" ./devices/common/diy.sh
 sed -i "3a\svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome feeds/custom/AdGuardHome" ./devices/common/diy.sh
 sed -i "3a\svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome feeds/custom/luci-app-adguardhome" ./devices/common/diy.sh
 
-echo "">./devices/common/settings.ini。
+echo "">./devices/common/settings.ini
 cat >> ./devices/common/settings.ini <<EOF
 REPO_URL="https://github.com/openwrt/openwrt"
 REPO_BRANCH="master"
