@@ -23,12 +23,10 @@ sed -i 's/tTPCBw1t/V4UetPzk/g' ./devices/common/default-settings
 sed -i 's/ldzfp37h5lSpO9VXk4uUE\\\/\:18336/CYXluq4wUazHjmCDBCqXF\.\:0/g' ./devices/common/default-settings
 wget -P ./devices/common https://raw.githubusercontent.com/gogogojason/files/master/diy2.sh
 
-cat >> ./devices/common/diy.sh <<EOF
-rm -Rf feeds/custom/AdGuardHome
-rm -Rf feeds/custom/luci-app-adguardhome
-svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome feeds/custom/AdGuardHome
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome feeds/custom/luci-app-adguardhome
-EOF
+sed -i "3a\rm -Rf feeds/custom/AdGuardHome" ./devices/common/diy.sh
+sed -i "3a\rm -Rf feeds/custom/luci-app-adguardhome" ./devices/common/diy.sh
+sed -i "3a\svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome feeds/custom/AdGuardHome" ./devices/common/diy.sh
+sed -i "3a\svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome feeds/custom/luci-app-adguardhome" ./devices/common/diy.sh
 
 echo "">./devices/common/settings.ini
 cat >> ./devices/common/settings.ini <<EOF
