@@ -57,7 +57,7 @@ EOF
 #echo "UPLOAD_RELEASE="false"">./devices/common/settings.ini
 #echo "SERVERCHAN_SCKEY="true"">./devices/common/settings.ini
 
-wget -P ./devices/common https://github.com/gogogojason/files/blob/master/settings.ini
+#wget -P ./devices/common https://github.com/gogogojason/files/blob/master/settings.ini
 rm -f ./devices/common/files/etc/AdGuardHome.yaml
 
 rm -rf .svn
