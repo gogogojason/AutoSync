@@ -25,8 +25,8 @@ wget -P ./devices/common https://raw.githubusercontent.com/gogogojason/files/mas
 
 sed -i "3a\rm -Rf feeds/custom/AdGuardHome" ./devices/common/diy.sh
 sed -i "3a\rm -Rf feeds/custom/luci-app-adguardhome" ./devices/common/diy.sh
-sed -i "3a\svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome feeds/custom/AdGuardHome" ./devices/common/diy.sh
-sed -i "3a\svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome feeds/custom/luci-app-adguardhome" ./devices/common/diy.sh
+sed -i "5a\svn co https://github.com/kenzok8/openwrt-packages/trunk/AdGuardHome feeds/custom/AdGuardHome" ./devices/common/diy.sh
+sed -i "5a\svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome feeds/custom/luci-app-adguardhome" ./devices/common/diy.sh
 
 echo "">./devices/common/settings.ini
 cat >> ./devices/common/settings.ini <<EOF
