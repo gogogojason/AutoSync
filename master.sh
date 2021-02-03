@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir devices
 mkdir .github/workflows
+rm -f ./.github/workflows/Openwrt-AutoBuild.yml
 wget -P ./.github/workflows https://raw.githubusercontent.com/gogogojason/files/master/.github/workflows/Openwrt-AutoBuild.yml
 svn co https://github.com/gogogojason/files/trunk/All_RM2100 ./devices/All_RM2100
 svn co https://github.com/gogogojason/files/trunk/Ap_RM2100 ./devices/Ap_RM2100
